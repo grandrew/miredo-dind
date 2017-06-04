@@ -17,8 +17,6 @@ sed -i '1s/sh/bash/' /miredo/etc/miredo/client-hook
 
 echo "Running miredo"
 chroot /miredo /bin/bash -c "miredo -c /etc/miredo.conf -u nobody"
-sleep 10
-export IPV6_IP=`ip -6 addr show teredo | grep global | xargs | cut -d' ' -f2 | cut -d'/' -f1`
 
 set -e
 
